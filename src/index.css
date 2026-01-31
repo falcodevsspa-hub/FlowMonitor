@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep Engineering Dark Theme */
+    --background: 220 25% 8%;
+    --foreground: 210 20% 90%;
+
+    --card: 220 25% 11%;
+    --card-foreground: 210 20% 90%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 210 20% 90%;
+
+    /* Cobalt Blue - Primary */
+    --primary: 215 70% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Subtle gray-blue */
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 210 15% 75%;
+
+    --muted: 220 20% 14%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 220 25% 18%;
+    --accent-foreground: 210 20% 90%;
+
+    /* Status Colors */
+    --destructive: 5 65% 45%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --warning: 38 85% 50%;
+    --warning-foreground: 220 25% 8%;
+    
+    --success: 152 55% 42%;
+    --success-foreground: 210 40% 98%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 16%;
+    --ring: 215 70% 50%;
+
+    --radius: 0.25rem;
+
+    /* Sidebar */
+    --sidebar-background: 220 25% 6%;
+    --sidebar-foreground: 210 15% 70%;
+    --sidebar-primary: 215 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 25% 12%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 220 20% 14%;
+    --sidebar-ring: 215 70% 50%;
+
+    /* Custom Design System */
+    --surface-elevated: 220 25% 13%;
+    --surface-overlay: 220 25% 15%;
+    --grid-line: 220 20% 15%;
+    --data-line: 215 70% 55%;
+    --threshold-line: 38 85% 55%;
+  }
+
+  .dark {
+    /* Already dark by default */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Monospace for data */
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Technical Grid Pattern */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(var(--grid-line)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--grid-line)) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Subtle glow for status indicators */
+  .status-glow-success {
+    box-shadow: 0 0 20px hsl(var(--success) / 0.3);
+  }
+
+  .status-glow-warning {
+    box-shadow: 0 0 20px hsl(var(--warning) / 0.3);
+  }
+
+  .status-glow-critical {
+    box-shadow: 0 0 20px hsl(var(--destructive) / 0.3);
+  }
+
+  /* Technical card style */
+  .card-technical {
+    @apply bg-card border border-border rounded-sm;
+    box-shadow: 0 2px 4px hsl(220 25% 5% / 0.3);
+  }
+
+  /* Zebra striping for tables */
+  .zebra-row:nth-child(even) {
+    @apply bg-muted/30;
+  }
+
+  /* Data badge styling */
+  .badge-data {
+    @apply font-mono text-xs px-2 py-0.5 rounded-sm;
+  }
+}
+
+@layer utilities {
+  /* Subtle border highlight */
+  .border-subtle {
+    border-color: hsl(var(--border) / 0.6);
+  }
+
+  /* Technical text styling */
+  .text-technical {
+    @apply font-mono tracking-tight;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+  }
+
+  /* Animation for data updates */
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
+  }
+
+  /* Scan line effect for hero */
+  @keyframes scan-line {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
+    animation: scan-line 4s linear infinite;
+  }
+}
