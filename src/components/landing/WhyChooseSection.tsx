@@ -45,7 +45,7 @@ export function WhyChooseSection() {
               <span className="text-primary">Socio Tecnológico</span>
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Flow-Monitor nace de la experiencia real en plantas industriales. 
+              Flux-Monitor nace de la experiencia real en plantas industriales. 
               Entendemos que cada operación es única y que la tecnología debe 
               adaptarse al negocio, no al revés.
             </p>

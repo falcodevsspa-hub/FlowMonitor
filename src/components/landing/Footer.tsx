@@ -11,7 +11,7 @@ export function Footer() {
               <div className="w-8 h-8 bg-primary/20 rounded-sm flex items-center justify-center">
                 <Activity className="w-4 h-4 text-primary" />
               </div>
-              <span className="font-semibold">Flow-Monitor</span>
+              <span className="font-semibold">Flux-Monitor</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-sm">
               Plataforma de monitoreo industrial para la continuidad operativa. 

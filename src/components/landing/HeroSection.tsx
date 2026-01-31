@@ -28,7 +28,7 @@ export function HeroSection() {
             </h1>
             
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Flow-Monitor integra sensores, procesamiento lógico y alertas en tiempo real. 
+              Flux-Monitor integra sensores, procesamiento lógico y alertas en tiempo real. 
               Garantiza la continuidad operativa y minimiza las pérdidas por ineficiencia.
             </p>
             

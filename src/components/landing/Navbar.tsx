@@ -14,7 +14,7 @@ export function Navbar() {
             <div className="w-8 h-8 bg-primary/20 rounded-sm flex items-center justify-center border border-primary/30">
               <Activity className="w-4 h-4 text-primary" />
             </div>
-            <span className="font-semibold">Flow-Monitor</span>
+            <span className="font-semibold">Flux-Monitor</span>
           </div>
           
           {/* Desktop Nav */}
